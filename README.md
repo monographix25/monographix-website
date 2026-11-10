@@ -2,7 +2,6 @@
 
 **Live:** https://monographix25.github.io/monographix-website/
 **Repository:** https://github.com/monographix25/monographix-website
-**Spiegel (zweiter Account):** https://danielgloeckler.github.io/monographix-website/
 
 Statische Website (HTML/CSS/JS, kein Build-Schritt, keine Frameworks, keine externen Requests beim Laden).
 Ziel: Kursbuchungen, Gutscheinverkäufe und Anfragen für Teamevents.
@@ -16,16 +15,8 @@ git commit -m "Was geändert wurde"
 git push
 ```
 
-`git push` geht an den **Hauptaccount** (`monographix25`). Für den Spiegel auf dem
-zweiten Account:
-
-```powershell
-gh auth switch -u DanielGloeckler
-git push altkonto main
-gh auth switch -u monographix25
-```
-
-GitHub Pages baut die Seite danach automatisch neu (ca. 1–2 Minuten).
+`git push` geht an `monographix25/monographix-website`. GitHub Pages baut die Seite
+danach automatisch neu (ca. 1–2 Minuten).
 
 **Schnellstart**
 
