@@ -1,0 +1,4 @@
+# Ordner nur für die lokale Bearbeitung
+.DS_Store
+Thumbs.db
+*.log

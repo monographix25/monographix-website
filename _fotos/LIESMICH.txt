@@ -1,0 +1,29 @@
+FOTOS HIER ABLEGEN
+==================
+
+Die Original-Bilder (PNG/JPG) in diesen Ordner kopieren – Dateinamen sind egal.
+
+Danach im Projektordner ausführen:
+
+    ..\.venv\Scripts\python.exe tools\import_photos.py
+
+Das Skript schneidet/verkleinert die Bilder (max. 1600 px, JPG)
+und legt sie als
+
+    assets/img/photos/hero.jpg
+    assets/img/photos/action.jpg
+    assets/img/photos/glas.jpg
+    assets/img/photos/basteln.jpg
+    assets/img/photos/fotografie.jpg
+    assets/img/photos/portrait.jpg
+    assets/img/photos/team.jpg
+    assets/img/photos/studio.jpg
+
+ab. Die Website greift genau auf diese Dateien zu.
+
+Reihenfolge der Zuordnung (alphabetisch nach Dateiname):
+  1. hero        2. action     3. glas       4. basteln
+  5. fotografie  6. portrait   7. team       8. studio
+
+Passt die automatische Zuordnung nicht, Dateien einfach passend
+umbenennen (z. B. "01_hero.png", "02_action.png") und erneut starten.
