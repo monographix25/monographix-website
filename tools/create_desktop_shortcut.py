@@ -1,32 +1,31 @@
 # -*- coding: utf-8 -*-
-"""Legt/aktualisiert die Desktop-Verknuepfung zur Website (ueber den lokalen Server)."""
+"""Desktop-Verknuepfung auf die Live-Seite (GitHub Pages)."""
 import os
 import subprocess
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-LAUNCHER = ROOT / "Website starten.vbs"
+URL = "https://danielgloeckler.github.io/monographix-website/"
 
 DESKTOP = Path(os.popen(
     "powershell -NoProfile -Command \"[Environment]::GetFolderPath('Desktop')\""
 ).read().strip())
-if not DESKTOP.exists():
-    DESKTOP = Path(os.path.expanduser("~")) / "Desktop"
 
-LINK = DESKTOP / "Monographix Website.lnk"
+# alte lokale Verknuepfung entfernen
+old = DESKTOP / "Monographix Website.lnk"
+if old.exists():
+    old.unlink()
+    print("alte lokale Verknuepfung entfernt")
 
-ps = f'''
-$ws = New-Object -ComObject WScript.Shell
-$sc = $ws.CreateShortcut("{LINK}")
-$sc.TargetPath = "C:\\Windows\\System32\\wscript.exe"
-$sc.Arguments = '"{LAUNCHER}"'
-$sc.WorkingDirectory = "{ROOT}"
-$sc.IconLocation = "%SystemRoot%\\System32\\imageres.dll,68"
-$sc.Description = "Website Monographix - Atelier fuer Kreativitaet"
-$sc.WindowStyle = 7
-$sc.Save()
-'''
-
-subprocess.run(["powershell", "-NoProfile", "-Command", ps], check=True)
-print(f"Verknuepfung: {LINK}")
-print(f"Startet:      {LAUNCHER} (lokaler Server + Browser)")
+target = DESKTOP / "Monographix Website.url"
+target.write_text(
+    "[InternetShortcut]\r\n"
+    f"URL={URL}\r\n"
+    "IconIndex=0\r\n"
+    "IconFile=%SystemRoot%\\System32\\imageres.dll\r\n",
+    encoding="utf-8",
+)
+print("erstellt:", target)
+subprocess.run(["powershell", "-NoProfile", "-Command",
+                f"$s=(New-Object -ComObject WScript.Shell).CreateShortcut('{target}'); $s.IconLocation='%SystemRoot%\\System32\\imageres.dll,68'; $s.Save()"],
+               check=False)
+print("URL:", URL)

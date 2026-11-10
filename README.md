@@ -1,7 +1,21 @@
 # Monographix – Website für ein kreatives Kunststudio
 
+**Live:** https://danielgloeckler.github.io/monographix-website/
+**Repository:** https://github.com/DanielGloeckler/monographix-website
+
 Statische Website (HTML/CSS/JS, kein Build-Schritt, keine Frameworks, keine externen Requests beim Laden).
 Ziel: Kursbuchungen, Gutscheinverkäufe und Anfragen für Teamevents.
+
+**Änderungen veröffentlichen**
+
+```powershell
+cd kunststudio
+git add -A
+git commit -m "Was geändert wurde"
+git push
+```
+
+GitHub Pages baut die Seite danach automatisch neu (ca. 1 Minute).
 
 **Schnellstart**
 
@@ -120,6 +134,10 @@ Mo–Do von 16 bis 19 Uhr, Fr/Sa/So ganztägig von 10 bis 19 Uhr (`timeSlots()` 
 
 ## 6. Technik
 
+- **Hosting:** GitHub Pages, Branch `main`, Ordner `/` (Einstellungen → Pages).
+  Die Seite ist rein statisch, `.nojekyll` verhindert Jekyll-Verarbeitung.
+- **Eigene Domain später:** bei GitHub Pages unter *Custom domain* eintragen, dann
+  `canonical`/`og:url` in den HTML-Dateien und `sitemap.xml`/`robots.txt` anpassen.
 - **Keine externen Ressourcen** beim Laden: Inter liegt als WOFF2 in `assets/fonts/`,
   alles andere lokal → keine Google-Fonts-Problematik, schnelle Ladezeit.
 - **Responsive** ab 320 px getestet; Sticky-CTA unter 720 px.
