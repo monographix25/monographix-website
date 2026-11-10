@@ -16,7 +16,16 @@ git commit -m "Was geändert wurde"
 git push
 ```
 
-GitHub Pages baut die Seite danach automatisch neu (ca. 1 Minute).
+`git push` geht an den **Hauptaccount** (`monographix25`). Für den Spiegel auf dem
+zweiten Account:
+
+```powershell
+gh auth switch -u DanielGloeckler
+git push altkonto main
+gh auth switch -u monographix25
+```
+
+GitHub Pages baut die Seite danach automatisch neu (ca. 1–2 Minuten).
 
 **Schnellstart**
 
