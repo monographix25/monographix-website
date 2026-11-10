@@ -1,7 +1,8 @@
 # Monographix – Website für ein kreatives Kunststudio
 
 **Live:** https://monographix25.github.io/monographix-website/
-**Repository:** https://github.com/DanielGloeckler/monographix-website
+**Repository:** https://github.com/monographix25/monographix-website
+**Spiegel (zweiter Account):** https://danielgloeckler.github.io/monographix-website/
 
 Statische Website (HTML/CSS/JS, kein Build-Schritt, keine Frameworks, keine externen Requests beim Laden).
 Ziel: Kursbuchungen, Gutscheinverkäufe und Anfragen für Teamevents.
