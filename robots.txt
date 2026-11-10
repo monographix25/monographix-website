@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /danke.html
 
-Sitemap: https://danielgloeckler.github.io/monographix-website/sitemap.xml
+Sitemap: https://monographix25.github.io/monographix-website/sitemap.xml
